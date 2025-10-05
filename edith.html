@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="templates\styles.css">
+    <title>EDITH</title>
+</head>
+<body>
+    
+    <video id="backgroundVideo" class="background-video" autoplay loop muted>
+        <source src="templates/edith-bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <h1>EDITH</h1>
+
+        <div id="output">
+            <p>Say: Wake Up</p>
+        </div>
+
+        <button onclick="startVoiceCommand()">Start Voice Command</button>
+        <button onclick="sendEmail()">Send Email</button>
+        <button onclick="openFile()">Open File</button>
+        <button onclick="playSong()">Play Song</button>
+        <button onclick="activateSecurityAssistant()">Activate Security Assistant</button>
+
+        <!-- Input for selecting music files -->
+        <input type="file" id="fileInput" multiple style="display:none" accept="audio/*" onchange="handleFileSelect(event)">
+    
+        <div id="musicControls">
+            <button id="prevBtn" onclick="playPreviousSong()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+                <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
+              </svg></button>
+            <button id="playBtn" onclick="playCurrentSong()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+              </svg></button>
+            <button id="pauseBtn" onclick="pauseCurrentSong()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16">
+                <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/>
+              </svg></button>
+            <button id="nextBtn" onclick="playNextSong()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+              </svg></button>
+        </div>
+
+        <div id="choiceButtons"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
